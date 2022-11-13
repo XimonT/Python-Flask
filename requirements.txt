@@ -1,0 +1,3 @@
+pip install -U Flask-WTF
+pip install email_validator
+pip install SQLAlchemy Flask-SQLAlchemy

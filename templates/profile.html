@@ -1,0 +1,12 @@
+<!-- templates/profile.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Welcome, !
+</h1>
+<h2 class="subtitle">
+  You are user number {{ session['user'] }}
+</h2>
+{% endblock %}
