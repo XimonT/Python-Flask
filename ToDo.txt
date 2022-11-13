@@ -1,0 +1,3 @@
+add logo on the left of the navbar
+
+use the https on the request and logout def
