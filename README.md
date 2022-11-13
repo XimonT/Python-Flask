@@ -28,6 +28,7 @@ Deactivate the environment using the command below
 In a terminal, you will set the FLASK_APP and FLASK_DEBUG values from within the Virtual Enviroment:
 
 `export FLASK_APP=project`
+
 `export FLASK_DEBUG=1`
 
 The FLASK_APP environment variable instructs Flask on how to load the app. You would want this to point to where create_app is located. For this tutorial, you will be pointing to the project directory.
