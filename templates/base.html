@@ -8,36 +8,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Flask Auth</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
 </head>
 
 <body>
     <section class="hero is-primary is-fullheight">
 
         <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-                    <div id="navbarMenuHeroA" class="navbar-menu">
-                        <div class="navbar-end">
-                            <a href="{{ url_for('index') }}" class="navbar-item">
-                                Home
-                            </a>
-                            {% if 'user' in session %}
-                            <a href="{{ url_for('profile') }}" class="navbar-item">
-                                Profile
-                            </a>
-                            <a href="{{ url_for('logout') }}" class="navbar-item">
-                                Logout
-                            </a>
-                            {% else  %}
-                            <a href="{{ url_for('login') }}" class="navbar-item">
-                                Login
-                            </a>
-                            {% endif %}
-                        </div>
-                    </div>
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                  <a class="navbar-item" href="https://bulma.io">
+                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+                  </a>
+                  <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarid">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                  </a>
                 </div>
-            </nav>
+                <div id="navbarid" class="navbar-menu">
+                  <div class="navbar-start">
+                    <a href="{{ url_for('index') }}" class="navbar-item">
+                      Home
+                    </a>
+                    {% if 'user' in session %}
+                    <a href="{{ url_for('profile') }}" class="navbar-item">
+                      Profile
+                    </a>
+                    {% endif %}
+                  </div>
+                  <div class="navbar-end p-2">
+                    <div class="navbar-item">
+                      <div class="buttons">
+                        {% if 'user' in session %}
+                        <a href="{{ url_for('logout') }}" class="button is-danger">
+                          <strong>Logout</strong>
+                        </a>
+                        {% else %}
+                        <a href="{{ url_for('login') }}" class="button is-warning">
+                          Log in
+                        </a>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
         </div>
 
         <div class="hero-body">
@@ -48,5 +64,29 @@
         </div>
     </section>
 </body>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+// Get all "navbar-burger" elements
+const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+// Add a click event on each of them
+$navbarBurgers.forEach( el => {
+  el.addEventListener('click', () => {
+
+    // Get the target from the "data-target" attribute
+    const target = el.dataset.target;
+    const $target = document.getElementById(target);
+
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    el.classList.toggle('is-active');
+    $target.classList.toggle('is-active');
+
+  });
+});
+
+});
+</script>
 
 </html>
