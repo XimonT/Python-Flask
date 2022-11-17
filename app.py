@@ -58,3 +58,9 @@ def profile():
 
     return render_template('profile.html')
 
+@app.route('/shift')
+def shift():
+    if not session.get('user'):
+        return redirect(url_for('login'))
+
+    return render_template('shift.html')

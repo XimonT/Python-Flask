@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Flask Auth</title>
+    <title>{% block title %}{% endblock %} | Ximon's Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
 </head>
 
@@ -34,6 +34,9 @@
                     {% if 'user' in session %}
                     <a href="{{ url_for('profile') }}" class="navbar-item">
                       Profile
+                    </a>
+                    <a href="{{ url_for('shift') }}" class="navbar-item">
+                      Shift
                     </a>
                     {% endif %}
                   </div>
