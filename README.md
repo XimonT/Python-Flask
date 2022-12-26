@@ -49,8 +49,8 @@ run this command
 
 ---
 
-## Create the file requirements.txt
+## How to store passwords securely using Werkzeug
 
-How to store passwords securely using Werkzeug
+implement secure user authentication system using python werkzeug
 [`source`](https://techmonger.github.io/4/secure-passwords-werkzeug/)
 
