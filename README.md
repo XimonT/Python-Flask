@@ -38,3 +38,19 @@ The FLASK_DEBUG environment variable is enabled by setting it to 1. This will en
 Ensure that you are in the main directory and then run the project:
 
 `flask run`
+
+---
+
+## Create the file requirements.txt
+
+run this command
+
+`pip freeze > requirements.txt`
+
+---
+
+## Create the file requirements.txt
+
+How to store passwords securely using Werkzeug
+[`source`](https://techmonger.github.io/4/secure-passwords-werkzeug/)
+
